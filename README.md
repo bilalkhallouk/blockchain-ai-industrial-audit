@@ -65,3 +65,16 @@ Then open:
 ```text
 http://localhost:5000/analyze
 ```
+
+Start the dashboard:
+
+```powershell
+cd dashboard
+npm.cmd start
+```
+
+Then open:
+
+```text
+http://localhost:3000
+```

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Industrial Audit Command Center</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <section>
+          <p class="eyebrow">Blockchain + AI supervision</p>
+          <h1>Industrial Audit Command Center</h1>
+        </section>
+        <section class="topbar-actions" aria-label="Dashboard actions">
+          <button id="refreshButton" class="icon-button" title="Refresh data" aria-label="Refresh data">
+            <span aria-hidden="true">R</span>
+          </button>
+          <button id="demoButton" class="primary-button">Simulate Suspicious Login</button>
+          <button id="exportButton" class="secondary-button">Export CSV</button>
+        </section>
+      </header>
+
+      <section class="status-grid" aria-label="System status">
+        <article class="metric">
+          <span class="metric-label">Ledger Entries</span>
+          <strong id="ledgerCount">0</strong>
+          <span id="ledgerStatus" class="metric-note">Checking</span>
+        </article>
+        <article class="metric">
+          <span class="metric-label">Critical Alerts</span>
+          <strong id="criticalCount">0</strong>
+          <span class="metric-note">AI stream</span>
+        </article>
+        <article class="metric">
+          <span class="metric-label">Integrity</span>
+          <strong id="integrityState">Unknown</strong>
+          <span id="integrityHash" class="metric-note">Ledger verification</span>
+        </article>
+        <article class="metric">
+          <span class="metric-label">Last Event</span>
+          <strong id="lastEventTime">--:--</strong>
+          <span id="lastEventUser" class="metric-note">Waiting for logs</span>
+        </article>
+      </section>
+
+      <section id="statusMessage" class="status-message" role="status">Connecting to services...</section>
+
+      <section class="workspace">
+        <section class="panel alerts-panel">
+          <div class="panel-heading">
+            <h2>AI Alerts</h2>
+            <span id="alertBadge" class="badge">0 active</span>
+          </div>
+          <div id="alertsList" class="alerts-list"></div>
+        </section>
+
+        <section class="panel feed-panel">
+          <div class="panel-heading">
+            <h2>Blockchain Event Feed</h2>
+            <span id="feedBadge" class="badge">0 events</span>
+          </div>
+          <div id="eventFeed" class="event-feed"></div>
+        </section>
+
+        <section class="panel profile-panel">
+          <div class="panel-heading">
+            <h2>User Behavior Profiles</h2>
+            <span class="badge">Baseline</span>
+          </div>
+          <div id="profilesList" class="profiles-list"></div>
+        </section>
+
+        <section class="panel timeline-panel">
+          <div class="panel-heading">
+            <h2>Forensic Timeline</h2>
+            <span id="timelineBadge" class="badge">Incident view</span>
+          </div>
+          <div id="timeline" class="timeline"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
