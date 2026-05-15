@@ -31,3 +31,18 @@ Every critical event in a factory environment is recorded on a private blockchai
 - Git
 - VS Code
 
+## Run The Current MVP
+
+The first implemented module is the blockchain audit API.
+
+```powershell
+cd blockchain
+npm.cmd test
+npm.cmd start
+```
+
+Or with Docker:
+
+```powershell
+docker compose up --build blockchain-api
+```

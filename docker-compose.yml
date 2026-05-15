@@ -5,9 +5,15 @@ services:
       - "4000:4000"
     environment:
       - NODE_ENV=development
+      - LEDGER_PATH=/app/data/events.json
+      - SIGNING_SECRET=development-ledger-signing-secret
+    volumes:
+      - blockchain-data:/app/data
 
   ai-service:
     build: ./ai
+    profiles:
+      - future
     ports:
       - "5000:5000"
     environment:
@@ -15,6 +21,8 @@ services:
 
   dashboard:
     build: ./dashboard
+    profiles:
+      - future
     ports:
       - "3000:3000"
     environment:
@@ -23,9 +31,14 @@ services:
 
   log-agent:
     build: ./agent
+    profiles:
+      - future
     environment:
       - BLOCKCHAIN_API_URL=http://blockchain-api:4000
       - AI_SERVICE_URL=http://ai-service:5000
     depends_on:
       - blockchain-api
       - ai-service
+
+volumes:
+  blockchain-data:
