@@ -46,3 +46,9 @@ Or with Docker:
 ```powershell
 docker compose up --build blockchain-api
 ```
+
+Send a simulated suspicious login from the log capture agent:
+
+```powershell
+python .\agent\agent.py suspicious-login
+```
