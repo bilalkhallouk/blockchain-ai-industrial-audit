@@ -12,12 +12,13 @@ services:
 
   ai-service:
     build: ./ai
-    profiles:
-      - future
     ports:
       - "5000:5000"
     environment:
       - PYTHONUNBUFFERED=1
+      - BLOCKCHAIN_API_URL=http://blockchain-api:4000
+    depends_on:
+      - blockchain-api
 
   dashboard:
     build: ./dashboard

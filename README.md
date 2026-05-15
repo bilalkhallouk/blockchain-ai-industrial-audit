@@ -52,3 +52,16 @@ Send a simulated suspicious login from the log capture agent:
 ```powershell
 python .\agent\agent.py suspicious-login
 ```
+
+Analyze blockchain events with the AI service:
+
+```powershell
+cd ai
+python server.py
+```
+
+Then open:
+
+```text
+http://localhost:5000/analyze
+```
