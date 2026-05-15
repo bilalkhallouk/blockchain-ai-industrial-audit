@@ -80,6 +80,20 @@ async function handleRequest(request, response) {
     return;
   }
 
+  if (request.method === "GET" && url.pathname === "/") {
+    sendJson(response, 200, {
+      service: "Blockchain Audit API",
+      status: "ok",
+      endpoints: {
+        health: "/health",
+        events: "/events",
+        createEvent: "POST /events",
+        verifyLedger: "/ledger/verify",
+      },
+    });
+    return;
+  }
+
   if (request.method === "GET" && url.pathname === "/health") {
     const entries = readLedger(LEDGER_PATH);
     const verification = verifyLedger(entries);

@@ -49,6 +49,22 @@ class AiHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         path = urlparse(self.path).path
 
+        if path == "/":
+            send_json(
+                self,
+                200,
+                {
+                    "service": "AI Anomaly Detection API",
+                    "status": "ok",
+                    "endpoints": {
+                        "health": "/health",
+                        "analyze": "/analyze",
+                        "score": "POST /score",
+                    },
+                },
+            )
+            return
+
         if path == "/health":
             send_json(
                 self,

@@ -21,6 +21,7 @@ const elements = {
   alertsList: document.querySelector("#alertsList"),
   eventFeed: document.querySelector("#eventFeed"),
   profilesList: document.querySelector("#profilesList"),
+  timelineBadge: document.querySelector("#timelineBadge"),
   timeline: document.querySelector("#timeline"),
   refreshButton: document.querySelector("#refreshButton"),
   demoButton: document.querySelector("#demoButton"),
