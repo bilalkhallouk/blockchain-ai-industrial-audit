@@ -1,0 +1,31 @@
+services:
+  blockchain-api:
+    build: ./blockchain
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=development
+
+  ai-service:
+    build: ./ai
+    ports:
+      - "5000:5000"
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  dashboard:
+    build: ./dashboard
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_URL=http://localhost:4000
+      - VITE_AI_URL=http://localhost:5000
+
+  log-agent:
+    build: ./agent
+    environment:
+      - BLOCKCHAIN_API_URL=http://blockchain-api:4000
+      - AI_SERVICE_URL=http://ai-service:5000
+    depends_on:
+      - blockchain-api
+      - ai-service
