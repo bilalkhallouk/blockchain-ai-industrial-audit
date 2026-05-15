@@ -14,13 +14,6 @@ Every critical event in a factory environment is recorded on a private blockchai
 - `dashboard/` - real-time supervision interface
 - `docs/` - architecture, planning, demo, and team notes
 
-## Team Split
-
-- Bilal - Blockchain and smart contracts
-- Mohamed - AI anomaly detection
-- Salah - Log capture agent
-- Walid - Dashboard and frontend
-
 ## MVP Demo Scenario
 
 1. A simulated SCADA/PLC event is generated.
@@ -30,7 +23,7 @@ Every critical event in a factory environment is recorded on a private blockchai
 5. A suspicious login from an unknown IP at 03:00 is flagged.
 6. The dashboard displays the alert, blockchain proof, and incident timeline.
 
-## Required Tools
+## Tools
 
 - Docker Desktop
 - Node.js LTS
@@ -38,6 +31,3 @@ Every critical event in a factory environment is recorded on a private blockchai
 - Git
 - VS Code
 
-## Next Step
-
-Before coding, validate and sign the cahier des charges with the full group, then send it to M. Hassan BADIR for approval.
